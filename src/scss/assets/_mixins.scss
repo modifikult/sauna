@@ -1,0 +1,39 @@
+@mixin btn($color, $bg, $h-bg) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 90px;
+  color: $color;
+  background: $bg;
+  border: none;
+  outline: none;
+  transition: all .4s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 90px;
+    background: $h-bg;
+    z-index: 6;
+    transform: translateX(-100%);
+    transition: all .4s ease;
+  }
+
+  &:hover {
+    &:after {
+      transform: translateX(0);
+    }
+  }
+
+  span {
+    z-index: 7;
+  }
+}

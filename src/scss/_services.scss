@@ -1,0 +1,147 @@
+@import 'assets/vars';
+
+.services {
+  padding: 100px 0 100px;
+}
+
+.services-content {
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0 20px 3px rgba(13, 27, 13, 0.76);
+}
+
+.services- {
+  &head, &list {
+    span {
+      display: block;
+
+      &:first-of-type {
+        width: calc(100% - 240px);
+      }
+
+      &:last-of-type {
+        width: 240px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.services-head {
+  width: calc(100% - 20px);
+  margin: 0 10px;
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, .2);
+
+  span {
+    padding: 12px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.services-list {
+  width: 100%;
+  list-style: none;
+
+  li {
+    width: calc(100% - 20px);
+    display: flex;
+    padding-left: 48px;
+    margin: 0 10px;
+
+    &:not(:last-of-type) {
+      border-bottom: 2px solid rgba(0, 0, 0, .2);
+    }
+
+    span {
+      padding: 15px 0;
+      font-size: 16px;
+
+      &:last-of-type {
+        border-left: 2px solid rgba(0, 0, 0, .2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .services-head {
+    span {
+      font-size: 18px;
+    }
+  }
+
+  .services-list {
+    li {
+      padding: 0;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .services-head {
+    span {
+      font-size: 16px;
+
+      &:first-of-type {
+        width: 70%;
+      }
+
+      &:last-of-type {
+        width: 30%;
+      }
+    }
+  }
+  .services-list {
+    li {
+      span {
+        font-size: 13px;
+
+        &:first-child {
+          width: 70%;
+          padding-left: 10px;
+        }
+
+        &:last-child {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 575px) {
+  .services-head {
+    span {
+      &:first-of-type {
+        width: 60%;
+      }
+
+      &:last-of-type {
+        width: 40%;
+      }
+    }
+  }
+  .services-list {
+    li {
+      span {
+        &:first-child {
+          width: 60%;
+        }
+
+        &:last-child {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

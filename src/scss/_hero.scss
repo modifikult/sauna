@@ -1,0 +1,132 @@
+@import 'assets/vars';
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+
+  .swiper-button- {
+    &prev, &next {
+      top: auto;
+      bottom: 11.51%;
+    }
+
+    &prev {
+      left: 3.33%;
+    }
+
+    &next {
+      right: 3.33%;
+    }
+  }
+}
+
+.hero-swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/hero-effect.png");
+  background-position: center;
+  background-size: cover;
+
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 15px;
+
+  > span, p {
+    color: $second-color;
+    line-height: 1.2;
+    text-shadow: 0 0 5px #000;
+  }
+
+  > span {
+    display: block;
+    max-width: 700px;
+    font-size: 72px;
+    font-weight: 700;
+    font-family: 'Caveat', sans-serif;
+    text-align: center;
+  }
+
+  p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    max-width: 320px;
+    min-width: 290px;
+    height: 60px;
+    position: relative;
+
+    span {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    img {
+      position: absolute;
+      bottom: 11px;
+      right: -53px;
+      width: 139px;
+      height: 121px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hero {
+    width: 100%;
+    height: 600px;
+    min-height: 600px;
+    position: relative;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .slide-content {
+    > span {
+      font-size: 46px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    a {
+      height: 50px;
+
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+}

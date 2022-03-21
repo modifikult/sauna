@@ -1,0 +1,169 @@
+@import "assets/vars";
+
+.gallery {
+  padding: 100px 0;
+}
+
+.gallery-content {
+  .page-title {
+    color: $primary-color;
+  }
+}
+
+.gallery-swiper {
+  .swiper-button- {
+    &prev, &next {
+      top: auto;
+      bottom: 20px;
+      background: $dark-blue;
+
+      &:after {
+        filter: invert(1);
+      }
+    }
+
+    &prev {
+      left: auto;
+      right: 7.66%;
+    }
+
+    &next {
+      right: 3.33%;
+    }
+  }
+}
+
+.gallery-swiper-slide {
+  display: flex;
+
+  .slide-left {
+    width: 48.77%;
+    height: 0;
+    padding-top: 34.44%;
+    overflow: hidden;
+    position: relative;
+
+
+    &:hover {
+      cursor: pointer;
+
+      .img {
+        filter: brightness(100%);
+      }
+
+      .icon {
+        filter: invert(0);
+      }
+    }
+
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(30%);
+      transition: all .3s ease;
+    }
+
+    .icon {
+      width: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      filter: invert(1);
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  .slide-right {
+    width: 51.23%;
+    padding-left: 90px;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 24px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 45px;
+    }
+
+    .description {
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .text {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .price {
+      font-size: 20px;
+    }
+
+    a {
+      margin: auto 0 25px;
+      width: 200px;
+      height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .gallery-swiper {
+    .swiper-button- {
+      &prev {
+        right: calc(3.3% + 60px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .gallery-swiper-slide {
+    flex-wrap: wrap;
+    .slide-left {
+      width: 100%;
+      padding-top: 55.44%;
+    }
+
+    .slide-right {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 10px;
+      .title {
+        margin-bottom: 15px;
+      }
+      a {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .gallery-swiper-slide {
+    .slide-right {
+      a {
+        margin: 20px auto 90px;
+      }
+    }
+  }
+  .gallery-swiper {
+    .swiper-button- {
+      &prev {
+        left: 3.33%;
+        right: auto;
+      }
+
+      &next {
+        right: 3.33%;
+      }
+    }
+  }
+}

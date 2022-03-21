@@ -1,0 +1,6 @@
+@import "mixins";
+@import "vars";
+
+.btn-main {
+  @include btn(#fff, $dark-blue, $dark-blue-hover);
+}

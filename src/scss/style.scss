@@ -1,0 +1,29 @@
+// fonts
+@import 'fonts';
+
+// header
+@import "../header/header";
+
+//footer
+@import "../footer/footer";
+
+// assets
+@import './assets/buttons';
+@import './assets/slider';
+@import './assets/animations';
+@import './assets/tabs';
+
+//layout
+@import "layout";
+
+// section
+@import "hero";
+@import "about";
+@import "products";
+@import "discount";
+@import "feedback";
+@import "contacts";
+@import "services";
+@import "gallery";
+@import "booking";
+

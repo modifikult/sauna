@@ -1,0 +1,150 @@
+@import "assets/vars";
+
+.products {
+  padding-bottom: 100px;
+
+  h2 {
+    margin-bottom: 54px;
+  }
+}
+
+.products-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  gap: 0 50px;
+}
+
+.products-item {
+  width: calc((100% / 3) - (100px / 3));
+  border-radius: 10px;
+  box-shadow: 0 0 20px 3px rgba(97, 134, 149, 0.76);
+  opacity: .75;
+  transition: all .4s ease;
+  padding-bottom: 30px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px 10px rgba(97, 134, 149, 0.76);
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .product-content {
+    padding: 0 30px;
+
+    h3 {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    > span {
+      display: block;
+      font-size: 28px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    a {
+      margin: 20px auto 0;
+      max-width: 257px;
+      min-width: 200px;
+      height: 51px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 0;
+  }
+
+  .products-item {
+    width: 100%;
+    opacity: 1;
+    padding-bottom: 0;
+    display: flex;
+
+    img {
+      width: 40%;
+      border-radius: 10px 0 0 10px;
+      object-fit: cover;
+    }
+
+    .product-content {
+
+      p {
+        font-size: 14px;
+      }
+
+      > span {
+        font-size: 28px;
+      }
+
+      a {
+        margin: 20px auto;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .products {
+    padding-bottom: 70px;
+  }
+
+  .products-item {
+    width: 100%;
+
+    .product-content {
+      > span {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .products-item {
+    width: 100%;
+    opacity: 1;
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
+
+    .product-content {
+
+
+
+      > span {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

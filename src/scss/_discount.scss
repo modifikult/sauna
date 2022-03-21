@@ -1,0 +1,85 @@
+@import 'assets/vars';
+
+.discount {
+  position: relative;
+  height: 546px;
+}
+
+.discount-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.4);
+  }
+}
+
+.discount-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  a {
+    max-width: 297px;
+    min-width: 260px;
+    height: 56px;
+    margin: 0 auto;
+    font-weight: 700;
+  }
+}
+
+.discount- {
+  &title, &subtitle, &value {
+    text-align: center;
+    display: block;
+    line-height: 1.25;
+    color: $second-color;
+  }
+
+  &title {
+    font-size: 48px;
+    letter-spacing: 0.25em;
+    margin-bottom: 26px;
+  }
+
+  &subtitle {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: $dark-blue-hover;
+  }
+
+  &value {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .discount-content {
+    a {
+      height: 50px;
+    }
+  }
+
+  .discount- {
+    &title {
+      font-size: 36px;
+    }
+
+    &subtitle {
+      font-size: 28px;
+    }
+
+    &value {
+      font-size: 36px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.tab-head {
+  .active {
+
+  }
+}
+
+.tab-content {
+  > div {
+    &:not(.active) {
+      pointer-events: none;
+      display: none;
+      transition: all 1s ease;
+    }
+
+    &.active {
+      display: flex;
+      pointer-events: unset;
+    }
+  }
+}
