@@ -35,13 +35,13 @@
 
   &prev {
     &:after {
-      content: url("../../img/svg/slider-arrow-left-1.svg");
+      content: url("../img/svg/slider-arrow-left-1.svg");
     }
   }
 
   &next {
     &:after {
-      content: url("../../img/svg/slider-arrow-right-1.svg");
+      content: url("../img/svg/slider-arrow-right-1.svg");
     }
   }
 }
