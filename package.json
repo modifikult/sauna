@@ -23,5 +23,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
     "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "lozad": "^1.16.0"
   }
 }

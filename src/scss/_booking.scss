@@ -170,6 +170,63 @@
   }
 }
 
+.booking-form {
+  width: 60%;
+  height: auto;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    width: 100%;
+
+    input {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 15px 10px;
+      font-family: "Montserrat", sans-serif;
+      border: 2px solid $dark-blue;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        color: #618695;
+      }
+    }
+  }
+
+  .info {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+
+    input {
+      width: 100%;
+      text-align: center;
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+
+  #send-booking-form {
+    max-width: 250px;
+    width: 320px;
+    height: 40px;
+    margin: 20px auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 @media screen and (max-width: 991px) {
   .booking-content {
     padding: 70px 100px;
@@ -258,6 +315,10 @@
         width: calc(100% / 3);
       }
     }
+  }
+
+  .booking-form {
+    width: 90%;
   }
 }
 

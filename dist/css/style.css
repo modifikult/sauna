@@ -761,6 +761,64 @@
   pointer-events: unset;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  display: none;
+  overflow-y: auto;
+}
+
+.popup.popup-show {
+  display: block;
+}
+
+.close-popup {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.close-popup span {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.close-popup span img {
+  width: 100%;
+  height: 100%;
+}
+
+.close-popup:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1247,6 +1305,79 @@ h4 {
   line-height: 1.25;
 }
 
+.feedback-form {
+  position: relative;
+  width: 50%;
+  height: 40%;
+  min-height: 500px;
+  margin: 100px auto;
+}
+
+.feedback-form label {
+  width: 100%;
+}
+
+.feedback-form label input {
+  margin-bottom: 10px;
+}
+
+.feedback-form label textarea {
+  height: calc(100% - 126px);
+  resize: none;
+}
+
+.feedback-form label input:not([type=submit]),
+.feedback-form label textarea {
+  width: 100%;
+  padding: 15px 10px;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #346268;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.feedback-form label input:not([type=submit]):focus,
+.feedback-form label textarea:focus {
+  outline: none;
+}
+
+.feedback-form label input:not([type=submit])::-webkit-input-placeholder, .feedback-form label textarea::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.feedback-form label input:not([type=submit])::-moz-placeholder, .feedback-form label textarea::-moz-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.feedback-form label input:not([type=submit]):-ms-input-placeholder, .feedback-form label textarea:-ms-input-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.feedback-form label input:not([type=submit])::-ms-input-placeholder, .feedback-form label textarea::-ms-input-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.feedback-form label input:not([type=submit])::placeholder,
+.feedback-form label textarea::placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.feedback-form #send-feedback-form {
+  max-width: 250px;
+  width: 320px;
+  height: 40px;
+  margin: 20px auto;
+}
+
+.feedback-form #send-feedback-form:hover {
+  cursor: pointer;
+}
+
 .contacts {
   padding: 200px 0 100px;
 }
@@ -1519,6 +1650,36 @@ h4 {
   height: 40px;
 }
 
+.gallery-popup .swiper-button-prev {
+  left: 1%;
+}
+
+.gallery-popup .swiper-button-next {
+  right: 1%;
+}
+
+.gallery-swiper-thumb {
+  width: 70%;
+  height: auto;
+  min-height: 600px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.gallery-swiper-wrapper-thumb {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-swiper-slide-thumb img {
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+
 .booking {
   padding: 100px 0;
 }
@@ -1713,6 +1874,86 @@ h4 {
   width: 250px;
   height: 40px;
   margin: 50px auto 0;
+}
+
+.booking-form {
+  width: 60%;
+  height: auto;
+  margin: 100px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.booking-form label {
+  width: 100%;
+}
+
+.booking-form label input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 15px 10px;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #346268;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.booking-form label input:focus {
+  outline: none;
+}
+
+.booking-form label input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.booking-form label input::-moz-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.booking-form label input:-ms-input-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.booking-form label input::-ms-input-placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.booking-form label input::placeholder {
+  font-size: 16px;
+  color: #618695;
+}
+
+.booking-form .info {
+  width: 50%;
+  text-align: center;
+  color: #fff;
+}
+
+.booking-form .info input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+}
+
+.booking-form #send-booking-form {
+  max-width: 250px;
+  width: 320px;
+  height: 40px;
+  margin: 20px auto;
+}
+
+.booking-form #send-booking-form:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1439px) {
@@ -2080,6 +2321,10 @@ h4 {
     margin-top: 20px;
   }
 
+  .gallery-swiper-thumb {
+    width: 90%;
+  }
+
   .booking-content {
     padding: 70px 100px;
   }
@@ -2110,6 +2355,30 @@ h4 {
     width: 60%;
     min-width: 290px;
     margin: 0 auto;
+  }
+
+  .close-popup {
+    width: 30px;
+    height: 30px;
+    top: 65px;
+    right: 25px;
+    z-index: 5;
+  }
+
+  .close-popup span {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .close-popup span img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .close-popup:hover {
+    cursor: pointer;
+    opacity: 1;
   }
 
   h2 {
@@ -2198,6 +2467,10 @@ h4 {
     padding: 70px 0 50px;
   }
 
+  .feedback-form {
+    width: 80%;
+  }
+
   .contacts {
     padding: 180px 0 100px;
   }
@@ -2257,6 +2530,17 @@ h4 {
 
   .services-list li span:last-child {
     width: 30%;
+  }
+
+  .gallery-swiper-thumb {
+    width: 95%;
+    min-height: 300px;
+    margin: 50px auto;
+  }
+
+  .gallery-swiper-slide-thumb img {
+    height: calc(100vh - 100px);
+    min-height: 300px;
   }
 
   .booking-content {
@@ -2408,6 +2692,10 @@ h4 {
     text-align: center;
   }
 
+  .feedback-form {
+    width: 85%;
+  }
+
   .contacts-content {
     padding: 15px;
   }
@@ -2502,5 +2790,9 @@ h4 {
 
   .booking-content .booking-time span {
     width: 33.3333333333%;
+  }
+
+  .booking-form {
+    width: 90%;
   }
 }

@@ -18,8 +18,8 @@
 
                         <!-- Slides -->
                         <div class="swiper-slide gallery-swiper-slide">
-                            <div class="slide-left">
-                                <img src="img/hero-img-1.png" alt="" class="img">
+                            <div class="slide-left show-popup" data-popup="gallery-popup">
+                                <img data-src="img/hero-img-1.png" alt="" class="img lozad">
                                 <img src="img/svg/search.svg" alt="" class="icon">
                             </div>
                             <div class="slide-right">
@@ -45,8 +45,8 @@
                             </div>
                         </div>
                         <div class="swiper-slide gallery-swiper-slide">
-                            <div class="slide-left">
-                                <img src="img/hero-img-2.png" alt="" class="img">
+                            <div class="slide-left show-popup" data-popup="gallery-popup">
+                                <img data-src="img/hero-img-2.png" alt="" class="img lozad">
                                 <img src="img/svg/search.svg" alt="" class="icon">
                             </div>
                             <div class="slide-right">
@@ -72,8 +72,8 @@
                             </div>
                         </div>
                         <div class="swiper-slide gallery-swiper-slide">
-                            <div class="slide-left">
-                                <img src="img/hero-img-3.png" alt="" class="img">
+                            <div class="slide-left show-popup" data-popup="gallery-popup">
+                                <img data-src="img/hero-img-3.png" alt="" class="img lozad">
                                 <img src="img/svg/search.svg" alt="" class="icon">
                             </div>
                             <div class="slide-right">
@@ -111,5 +111,34 @@
     </section> <!--  end gallery  -->
 
 </main>
+
+<!--  end popup-gallery  -->
+<div class="popup gallery-popup" id="gallery-popup">
+    <div class="swiper gallery-swiper-thumb">
+        <div class="swiper-wrapper gallery-swiper-wrapper-thumb">
+            <div class="swiper-slide gallery-swiper-slide-thumb">
+                <img data-src="img/hero-img-1.png" alt="" class="img lozad">
+            </div>
+            <div class="swiper-slide gallery-swiper-slide-thumb">
+                <img data-src="img/hero-img-2.png" alt="" class="img lozad">
+            </div>
+            <div class="swiper-slide gallery-swiper-slide-thumb">
+                <img data-src="img/hero-img-3.png" alt="" class="img lozad">
+            </div>
+        </div>
+        <div class="swiper-button-prev custom-button-prev"></div>
+        <div class="swiper-button-next custom-button-next"></div>
+    </div>
+
+    <button class="close-popup btn-sec">
+            <span>
+                <img src="img/svg/close-cross.svg" alt="">
+            </span>
+    </button>
+</div> <!--  end popup-gallery  -->
+
+<button id="scroll-top">
+    <img src="img/svg/arrow-top.svg" alt="">
+</button>
 
 @@include('footer/footer.html')

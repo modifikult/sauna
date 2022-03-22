@@ -43,7 +43,26 @@ new Swiper('.feedback-swiper', {
     },
 })
 
-new Swiper('.gallery-swiper', {
+let galleryThumb = new Swiper('.gallery-swiper-thumb', {
+    effect: 'creative',
+    creativeEffect: {
+        prev: {
+            opacity: 0
+        },
+        next: {
+            scale: 1.2,
+            opacity: 0
+        }
+    },
+    direction: 'horizontal',
+    navigation: {
+        prevEl: '.gallery-popup .swiper-button-prev',
+        nextEl: '.gallery-popup .swiper-button-next'
+    }
+})
+
+
+let gallerySwiper = new Swiper('.gallery-swiper', {
     effect: 'creative',
     creativeEffect: {
         prev: {
@@ -56,11 +75,16 @@ new Swiper('.gallery-swiper', {
     },
     direction: 'horizontal',
     // loop: true,
-    simulateTouch: false,
+    slidesPerView: 1,
     navigation: {
         nextEl: '.gallery-swiper .swiper-button-next',
         prevEl: '.gallery-swiper .swiper-button-prev',
     },
+
+    thumbs: {
+        swiper: galleryThumb,
+
+    }
 })
 
 const scrollTop = document.getElementById('scroll-top');
@@ -113,30 +137,51 @@ if (burgerBtn) {
     })
 }
 
-const calendars = document.querySelectorAll('.booking-calendar')
+const calendars = document.querySelectorAll('.booking-calendar');
 
-if(calendars.length) {
-    console.log('work')
-
+if (calendars.length) {
     const datepicker1 = new AirDatepicker('#airdatepicker-1', {
         minDate: new Date(),
-        startDate: new Date(),
+        toggleSelected: false,
     });
-
     datepicker1.selectDate(new Date())
 
     const datepicker2 = new AirDatepicker('#airdatepicker-2', {
         minDate: new Date(),
-        startDate: new Date(),
+        toggleSelected: false,
     });
-
     datepicker2.selectDate(new Date())
+
+    const bookingBtn = document.querySelectorAll('a[data-popup="booking-popup"]')
+    const bookingDateInput = document.querySelector('input[name="booking-date"]')
+    const bookingTimeInput = document.querySelector('input[name="booking-time"]')
+
+    bookingBtn.forEach((btn, idx) => {
+        if (!idx) {
+            btn.onclick = function () {
+                const bookingDate = datepicker1.$el.value
+                const bookingTime = btn.parentElement.parentElement.querySelector('.target').innerText
+
+                bookingDateInput.value = bookingDate
+                bookingTimeInput.value = bookingTime
+            }
+        } else {
+            btn.onclick = function () {
+                const bookingDate = datepicker2.$el.value
+                const bookingTime = btn.parentElement.parentElement.querySelector('.target').innerText
+
+                bookingDateInput.value = bookingDate
+                bookingTimeInput.value = bookingTime
+            }
+        }
+
+    })
 }
 
 
 const tabHead = document.querySelectorAll('.tab-head a');
 
-if (tabHead) {
+if (tabHead.length) {
     tabHead.forEach(tabH => {
         tabH.addEventListener('click', function (e) {
             e.preventDefault()
@@ -156,8 +201,6 @@ if (tabHead) {
             this.classList.add('active')
 
             document.getElementById(id).classList.add('active')
-
-            console.log(selectTime)
         })
     })
 }
@@ -181,11 +224,11 @@ if (selectTime) {
 
 const anim = document.querySelectorAll('.anim')
 
-if (anim) {
+if (anim.length) {
     let observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             const elem = entry.target
-            if(entry.isIntersecting) {
+            if (entry.isIntersecting) {
                 elem.style.animationDelay = elem.dataset.animDel + 'ms'
                 elem.style.animationDuration = elem.dataset.animDur + 'ms'
                 elem.style.animationName = elem.dataset.animName
@@ -200,3 +243,54 @@ if (anim) {
         })
     }
 }
+
+const showPopupBtn = document.querySelectorAll('.show-popup');
+
+if (showPopupBtn.length) {
+
+    showPopupBtn.forEach(btn => {
+        btn.addEventListener('click', function (el) {
+            el.preventDefault()
+
+            const popupId = this.dataset.popup;
+
+            document.getElementById(popupId).classList.add('popup-show');
+            document.querySelector('body').classList.add('no-scroll');
+        })
+    })
+
+    const closePopup = document.querySelectorAll('.close-popup');
+
+    closePopup.forEach(closeBtn => {
+        closeBtn.addEventListener('click', function (el) {
+            const currentPopup = this.closest('.popup');
+
+            if (currentPopup) {
+                currentPopup.classList.remove('popup-show');
+                document.querySelector('body').classList.remove('no-scroll');
+            }
+
+        })
+    })
+
+    const popup = document.querySelectorAll('.popup');
+
+    window.addEventListener('click', function (e) {
+        popup.forEach(popupItem => {
+            if (e.target == popupItem) {
+                popupItem.classList.remove('popup-show');
+                document.querySelector('body').classList.remove('no-scroll');
+            }
+        })
+    })
+}
+
+const lazyloadAll = document.querySelectorAll('.lozad');
+
+if(lazyloadAll.length) {
+    lazyloadAll.forEach(img => {
+        const observer = lozad(img)
+        observer.observe();
+    })
+}
+

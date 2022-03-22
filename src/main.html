@@ -14,7 +14,7 @@
                 <!-- Slides -->
                 <div class="swiper-slide hero-swiper-slide">
                     <div class="slide-bg">
-                        <img src="img/hero-img-1.png" alt="">
+                        <img data-src="img/hero-img-1.png" alt="" class="lozad">
                     </div>
                     <div class="slide-content">
                         <span>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="swiper-slide hero-swiper-slide">
                     <div class="slide-bg">
-                        <img src="img/hero-img-2.png" alt="">
+                        <img data-src="img/hero-img-2.png" alt="" class="lozad">
                     </div>
                     <div class="slide-content">
                         <span>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="swiper-slide hero-swiper-slide">
                     <div class="slide-bg">
-                        <img src="img/hero-img-1.png" alt="">
+                        <img data-src="img/hero-img-1.png" alt="" class="lozad">
                     </div>
                     <div class="slide-content">
                         <span>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="swiper-slide hero-swiper-slide">
                     <div class="slide-bg">
-                        <img src="img/hero-img-2.png" alt="">
+                        <img data-src="img/hero-img-2.png" alt="" class="lozad">
                     </div>
                     <div class="slide-content">
                         <span>
@@ -139,7 +139,7 @@
         <div class="container">
             <ul class="products-list">
                 <li class="products-item">
-                    <img src="img/product-img-1.jpg" alt="">
+                    <img data-src="img/product-img-1.jpg" alt="" class="lozad">
                     <div class="product-content">
                         <h3>
                             Lorem ipsum dolor
@@ -159,7 +159,7 @@
                     </div>
                 </li>
                 <li class="products-item">
-                    <img src="img/product-img-2.jpg" alt="">
+                    <img data-src="img/product-img-2.jpg" alt="" class="lozad">
                     <div class="product-content">
                         <h3>
                             Lorem ipsum dolor
@@ -179,7 +179,7 @@
                     </div>
                 </li>
                 <li class="products-item">
-                    <img src="img/product-img-3.jpg" alt="">
+                    <img data-src="img/product-img-3.jpg" alt="" class="lozad">
                     <div class="product-content">
                         <h3>
                             Lorem ipsum dolor
@@ -205,7 +205,7 @@
     <!--  start discount  -->
     <section class="discount anim" data-anim-name="fade" data-anim-del="0" data-anim-dur="3000">
         <div class="discount-bg">
-            <img src="img/discount-bg.png" alt="">
+            <img data-src="img/discount-bg.png" alt="" class="lozad">
         </div>
         <div class="container">
             <div class="discount-content">
@@ -221,7 +221,7 @@
         </div>
     </section> <!--  end discount  -->
 
-    <!--  start discount  -->
+    <!--  start feedback  -->
     <section class="feedback anim" data-anim-name="fade" data-anim-del="0" data-anim-dur="3000">
         <h2>
             Отзывы
@@ -282,15 +282,38 @@
                 </div>
             </div>
 
-            <a href="#" class="btn-main">
+            <a href="#" class="btn-main show-popup" data-popup="feedback-popup">
                 <span>
                     Оставить отзыв
                 </span>
             </a>
         </div>
-    </section> <!--  end discount  -->
+    </section> <!--  end feedback  -->
 
 </main>
+
+<!--  start feedback-popup  -->
+<div class="popup feedback-popup" id="feedback-popup">
+    <form action="" class="feedback-form">
+        <label>
+            <input type="text" placeholder="Ваше имя">
+        </label>
+        <label>
+            <textarea placeholder="Ваш коментарий"></textarea>
+        </label>
+        <button type="submit" class="btn-main send-form" id="send-feedback-form">
+            <span>
+                Отправить
+            </span>
+        </button>
+    </form>
+
+    <button class="close-popup btn-sec">
+            <span>
+                <img src="img/svg/close-cross.svg" alt="">
+            </span>
+    </button>
+</div> <!--  end feedback-popup  -->
 
 <button id="scroll-top">
     <img src="img/svg/arrow-top.svg" alt="">

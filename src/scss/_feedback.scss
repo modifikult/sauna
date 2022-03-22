@@ -6,6 +6,7 @@
   h2 {
     margin-bottom: 55px;
   }
+
   .container {
     > a {
       width: 172px;
@@ -59,10 +60,64 @@
   }
 }
 
+.feedback-form {
+  position: relative;
+  width: 50%;
+  height: 40%;
+  min-height: 500px;
+  margin: 100px auto;
+
+  label {
+    width: 100%;
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      height: calc(100% - 126px);
+      resize: none;
+    }
+
+    input:not([type='submit']), textarea {
+      width: 100%;
+      padding: 15px 10px;
+      font-family: "Montserrat", sans-serif;
+      border: 2px solid $dark-blue;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        color: #618695;
+      }
+    }
+  }
+
+  #send-feedback-form {
+    max-width: 250px;
+    width: 320px;
+    height: 40px;
+    margin: 20px auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 
 @media screen and (max-width: 767px) {
   .feedback {
     padding: 70px 0 50px;
+  }
+
+  .feedback-form {
+    width: 80%;
   }
 }
 
@@ -84,5 +139,9 @@
         text-align: center;
       }
     }
+  }
+
+  .feedback-form {
+    width: 85%;
   }
 }
